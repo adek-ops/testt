@@ -1,0 +1,114 @@
+/* ==========================================================================
+   RESPONSIVE — PT MAHA HARMONI ABADI
+   Breakpoints: >=1240 desktop / 1024 tablet-l / 768 tablet-p / 480 mobile
+   ========================================================================== */
+
+/* ---------- Large desktop tighten ---------- */
+@media (max-width:1240px){
+  :root{--container:100%;}
+  .container{padding-inline:var(--space-4);}
+}
+
+/* ---------- Tablet landscape ---------- */
+@media (max-width:1024px){
+  .about-wrap{grid-template-columns:1fr;gap:var(--space-5);}
+  .about-visual{max-width:420px;margin-inline:auto;}
+  .services-grid{grid-template-columns:repeat(2,1fr);}
+  .stats-grid{grid-template-columns:repeat(2,1fr);row-gap:var(--space-4);}
+  .gallery-grid{grid-template-columns:repeat(3,1fr);}
+  .gallery-item:nth-child(1){grid-column:span 2;}
+  .contact-wrap{grid-template-columns:1fr;}
+  .contact-info{order:2;}
+  .footer-grid{grid-template-columns:1fr 1fr;row-gap:var(--space-5);}
+}
+
+/* ---------- Tablet portrait / small laptop ---------- */
+@media (max-width:900px){
+  .nav-desktop{display:none;}
+  .hamburger{display:flex;}
+  .hero-content{max-width:640px;}
+}
+
+@media (min-width:901px){
+  .nav-mobile,.nav-overlay,.hamburger{display:none;}
+}
+
+/* ---------- Mobile / tablet portrait ---------- */
+@media (max-width:768px){
+  :root{--space-6:4rem;--space-7:5.5rem;--header-h:72px;}
+  .section{padding-block:var(--space-5);}
+
+  .hero{min-height:100svh;}
+  .hero-actions{flex-direction:column;align-items:stretch;}
+  .hero-actions .btn{width:100%;}
+
+  .vm-grid{grid-template-columns:1fr;}
+  .services-grid{grid-template-columns:1fr;}
+  .service-card:nth-child(3){grid-column:auto;max-width:none;}
+
+  .stats-grid{grid-template-columns:1fr 1fr;gap:var(--space-3);}
+
+  .gallery-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px;}
+  .gallery-item:nth-child(1){grid-column:span 2;grid-row:span 1;}
+  .gallery-item:nth-child(4){grid-column:span 1;}
+
+  .testi-arrow{display:none;}
+  .testi-slide{padding:var(--space-4);}
+
+  .form-row{grid-template-columns:1fr;}
+  .contact-form{padding:var(--space-4);}
+  .contact-info{padding:var(--space-4);}
+
+  .footer-grid{grid-template-columns:1fr;gap:var(--space-4);}
+  .footer-bottom{flex-direction:column;text-align:center;}
+
+  .lightbox-prev,.lightbox-next{width:38px;height:38px;}
+  .lightbox img{max-width:92vw;}
+
+  .floating-actions{right:var(--space-2);bottom:var(--space-2);}
+  .fab{width:48px;height:48px;}
+  .fab svg{width:21px;height:21px;}
+}
+
+/* ---------- Small mobile ---------- */
+@media (max-width:480px){
+  .container{padding-inline:var(--space-3);}
+  .hero h1{font-size:clamp(1.9rem,8vw,2.6rem);}
+  .hero p.lead{font-size:.98rem;}
+  .about-badge{position:static;margin-top:var(--space-3);}
+  .stats-grid{grid-template-columns:1fr 1fr;}
+  .stat-item strong{font-size:1.7rem;}
+  .gallery-grid{grid-template-columns:1fr 1fr;grid-auto-rows:130px;}
+  .section-head h2{font-size:1.6rem;}
+  .popup-box{max-width:90vw;}
+
+  /* Declutter header so logo, theme toggle and hamburger never
+     overlap or run off-screen on narrow phones. */
+  .header-actions{gap:.5rem;}
+  .header-actions > .btn{display:none;}
+  .logo-text small{display:none;}
+  .logo-mark{width:36px;height:36px;}
+  .logo{font-size:1rem;gap:.5rem;}
+  .theme-toggle,.hamburger{flex-shrink:0;}
+}
+
+/* ---------- Extra-small mobile ---------- */
+@media (max-width:360px){
+  :root{--space-4:1.6rem;}
+  .logo-text{font-size:.92rem;}
+  .theme-toggle{width:38px;height:38px;}
+  .btn{padding:.8rem 1.3rem;font-size:.88rem;}
+  .hero-eyebrow{font-size:.7rem;padding:.4rem .8rem;}
+  .service-card{padding:var(--space-3);}
+  .contact-form,.contact-info{padding:var(--space-3);}
+}
+
+/* ---------- Landscape phones ---------- */
+@media (max-height:480px) and (orientation:landscape){
+  .hero{min-height:auto;padding-block:calc(var(--header-h) + var(--space-4)) var(--space-4);}
+}
+
+/* ---------- Print ---------- */
+@media print{
+  #header,.floating-actions,#preloader,#scroll-progress,.nav-mobile,.nav-overlay{display:none!important;}
+}
